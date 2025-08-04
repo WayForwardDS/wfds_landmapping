@@ -1,38 +1,30 @@
+// import { defineConfig } from 'vite'
+// import react from '@vitejs/plugin-react'
+
+// export default defineConfig({
+//   plugins: [react()],
+//    optimizeDeps: {
+//     include: ['leaflet']
+//   },
+//    resolve: {
+//     alias: {}
+//   }
+ 
+
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-   optimizeDeps: {
+  optimizeDeps: {
     include: ['leaflet']
   },
-   resolve: {
+  resolve: {
     alias: {}
+  },
+  base: '/', // This ensures assets are loaded correctly in production
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true,
   }
-  // build: {
-  //   sourcemap: false, 
-  //   minify: 'terser', 
-  //   terserOptions: {
-  //     compress: {
-  //       drop_console: true,
-  //       drop_debugger: true,
-  //     },
-  //   },
-  // },
 })
-
-
-// import { defineConfig } from 'vite';
-// import react from '@vitejs/plugin-react';
-
-// export default defineConfig({
-//   plugins: [react()],
-//   optimizeDeps: {
-//     include: ['react-leaflet'],
-//   },
-//   resolve: {
-//     dedupe: ['react-leaflet'],
-//   },
-// });
-// ;
-
